@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@app/*": ["./app/*"],
+      "@screen/*": ["./app/screens/*"],
+      "@constant": ["./app/constants/Constant.js"],
+      "@api": ["./app/constants/Api.js"],
+      "@action": ["./app/redux/actions/index.js"],
+      "@component": ["./app/components"],
+      "@theme": ["./app/constants/Theme.js"],
+      "@R": ["./app/assets/R.js"]
+    },
+    "forceConsistentCasingInFileNames": true,
+    "jsx": "react-native",
+    "pretty": true
+  },
+  "exclude": ["node_modules", "*/node_modules/**"],
+  "typeAcquisition": {
+    "enable": true
+  }
+}

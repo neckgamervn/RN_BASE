@@ -1,0 +1,347 @@
+{
+  "project_info": {
+    "project_number": "777141683282",
+    "firebase_url": "https://winds-12268.firebaseio.com",
+    "project_id": "winds-12268",
+    "storage_bucket": "winds-12268.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:777141683282:android:19ece0f9969cf8e3",
+        "android_client_info": {
+          "package_name": "com.dentalhub.clinic"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "777141683282-pai3cff3egobbgbuom995e8ggb3bq02p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3CBVQUYotmS5uV6Fuj0iyFIV7qgSN6AU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "777141683282-1frol8cttc5nfvhrrsvkcjmvt9nt7mte.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "777141683282-c92n7dn4tsednqdonbb9gsq4bfns80a3.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.imotor.ptxm"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:777141683282:android:165b7b40dda71cd9c84b8b",
+        "android_client_info": {
+          "package_name": "com.imotor.ptxm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "777141683282-a2rvh1prjprmv13tvev4qr4ursqf03lt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.imotor.ptxm",
+            "certificate_hash": "9773e05b2c98fdbd10f2cbf6ae8446ae4844b1a2"
+          }
+        },
+        {
+          "client_id": "777141683282-pai3cff3egobbgbuom995e8ggb3bq02p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3CBVQUYotmS5uV6Fuj0iyFIV7qgSN6AU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "777141683282-1frol8cttc5nfvhrrsvkcjmvt9nt7mte.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "777141683282-c92n7dn4tsednqdonbb9gsq4bfns80a3.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.imotor.ptxm"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:777141683282:android:65f6d962f69cb5b3c84b8b",
+        "android_client_info": {
+          "package_name": "com.rn_base"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "777141683282-aib92t858o8l1i5lj17lt0d49e06lacb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rn_base",
+            "certificate_hash": "f08cba5e545ade42ab3b29478653f0fe71107903"
+          }
+        },
+        {
+          "client_id": "777141683282-pai3cff3egobbgbuom995e8ggb3bq02p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3CBVQUYotmS5uV6Fuj0iyFIV7qgSN6AU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "777141683282-1frol8cttc5nfvhrrsvkcjmvt9nt7mte.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "777141683282-c92n7dn4tsednqdonbb9gsq4bfns80a3.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.imotor.ptxm"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:777141683282:android:cfb6d5c4c471d35e",
+        "android_client_info": {
+          "package_name": "com.vn.dekko"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "777141683282-06qk0qth2711rpt6khrcbh2rm7aecitq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.vn.dekko",
+            "certificate_hash": "9773e05b2c98fdbd10f2cbf6ae8446ae4844b1a2"
+          }
+        },
+        {
+          "client_id": "777141683282-pai3cff3egobbgbuom995e8ggb3bq02p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3CBVQUYotmS5uV6Fuj0iyFIV7qgSN6AU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "777141683282-1frol8cttc5nfvhrrsvkcjmvt9nt7mte.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "777141683282-c92n7dn4tsednqdonbb9gsq4bfns80a3.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.imotor.ptxm"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:777141683282:android:95bf99c652451216",
+        "android_client_info": {
+          "package_name": "lifetek.com.vn.fiona"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "777141683282-paarqsoefbqi5k8m9llloga0p1lnb6qd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "lifetek.com.vn.fiona",
+            "certificate_hash": "688e449e7386d058a79262c2cb4c7140e9a0ad7a"
+          }
+        },
+        {
+          "client_id": "777141683282-pai3cff3egobbgbuom995e8ggb3bq02p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3CBVQUYotmS5uV6Fuj0iyFIV7qgSN6AU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "777141683282-1frol8cttc5nfvhrrsvkcjmvt9nt7mte.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "777141683282-c92n7dn4tsednqdonbb9gsq4bfns80a3.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.imotor.ptxm"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:777141683282:android:556f2c231f79a90a",
+        "android_client_info": {
+          "package_name": "lifetek.com.vn.ibike"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "777141683282-l89j5d6j8g4fp0qv174pma0hvinse8l0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "lifetek.com.vn.ibike",
+            "certificate_hash": "688e449e7386d058a79262c2cb4c7140e9a0ad7a"
+          }
+        },
+        {
+          "client_id": "777141683282-pai3cff3egobbgbuom995e8ggb3bq02p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3CBVQUYotmS5uV6Fuj0iyFIV7qgSN6AU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "777141683282-1frol8cttc5nfvhrrsvkcjmvt9nt7mte.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "777141683282-c92n7dn4tsednqdonbb9gsq4bfns80a3.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.imotor.ptxm"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:777141683282:android:6d3e058cd296fcaf",
+        "android_client_info": {
+          "package_name": "vn.com.dekko"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "777141683282-pai3cff3egobbgbuom995e8ggb3bq02p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3CBVQUYotmS5uV6Fuj0iyFIV7qgSN6AU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "777141683282-1frol8cttc5nfvhrrsvkcjmvt9nt7mte.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "777141683282-c92n7dn4tsednqdonbb9gsq4bfns80a3.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.imotor.ptxm"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:777141683282:android:2ad4e932a6d6d74dc84b8b",
+        "android_client_info": {
+          "package_name": "vn.com.kdpd"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "777141683282-ditua6nfdmc7l0j5r9fq70flkdb5imha.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "vn.com.kdpd",
+            "certificate_hash": "9773e05b2c98fdbd10f2cbf6ae8446ae4844b1a2"
+          }
+        },
+        {
+          "client_id": "777141683282-pai3cff3egobbgbuom995e8ggb3bq02p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3CBVQUYotmS5uV6Fuj0iyFIV7qgSN6AU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "777141683282-1frol8cttc5nfvhrrsvkcjmvt9nt7mte.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "777141683282-c92n7dn4tsednqdonbb9gsq4bfns80a3.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.imotor.ptxm"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
