@@ -1,4 +1,4 @@
-import { put, call, takeEvery } from "redux-saga/effects";
+import { call, put, takeEvery } from "redux-saga/effects";
 
 export function success(type) {
   return `${type}_success`;

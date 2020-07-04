@@ -12,5 +12,8 @@ module.exports = {
     HOME: "Home",
     USER: "User"
   },
-  AUTH_LOADING: "AuthLoading"
+  AUTH_LOADING: "AuthLoading",
+  API_STATUS: {
+    RE_LOGIN: 403
+  }
 };

@@ -1,12 +1,11 @@
 import React, { Component } from "react";
 import {
-  View,
-  SafeAreaView,
-  ViewProps,
-  StatusBar,
-  Keyboard,
   Platform,
-  Text
+  SafeAreaView,
+  StatusBar,
+  Text,
+  View,
+  ViewProps
 } from "react-native";
 import RNHeader from "./RNHeader";
 import Error from "./Error";

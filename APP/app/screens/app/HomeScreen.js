@@ -1,9 +1,8 @@
-import React, { Component } from "react";
-import { View, Text } from "react-native";
+import React from "react";
 import { connect } from "react-redux";
-import RNText from "@app/components/RNText";
+import { Text } from "react-native";
 
-const HomeScreen = props => <RNText text="Xin chao" />;
+const HomeScreen = props => <Text children={"ahihih"} />;
 
 const mapStateToProps = state => ({});
 

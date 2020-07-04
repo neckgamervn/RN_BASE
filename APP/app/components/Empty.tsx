@@ -1,9 +1,11 @@
 import React, { Component } from "react";
-import { Text, StyleSheet, View, Dimensions } from "react-native";
+import { Dimensions, StyleSheet, Text, View } from "react-native";
 import FastImage, { Source } from "react-native-fast-image";
 import R from "@app/assets/R";
 import { colors } from "@app/constants/Theme";
+
 const { width, height } = Dimensions.get("window");
+
 interface EmptyProps {
   header?: JSX.Element;
   sourceImage?: Source | number;
@@ -15,6 +17,7 @@ export default class Empty extends Component<EmptyProps> {
   state = {
     marginTop: height / 5
   };
+
   render() {
     const { header, sourceImage, description, marginTop } = this.props;
     return (

@@ -1,11 +1,16 @@
 import React, { Component } from "react";
-import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+  ViewStyle
+} from "react-native";
 import { Header } from "react-native-elements";
 import NavigationUtil from "../navigation/NavigationUtil";
-import Icon from "./Icon";
 import * as theme from "../constants/Theme";
 import R from "@app/assets/R";
-import { ViewStyle } from "react-native";
+
 interface Props {
   color?: string;
   back?: boolean;
@@ -35,13 +40,9 @@ export class BackButton extends Component<BackProps> {
     return (
       <TouchableOpacity
         style={[style || styles.leftComp]}
-        onPress={() => NavigationUtil.goBack()}
+        onPress={NavigationUtil.goBack}
       >
-        <Icon.Ionicons
-          name="ios-arrow-round-back"
-          size={40}
-          color={theme.colors.white}
-        />
+        <Text children={"back"} />
       </TouchableOpacity>
     );
   }
@@ -66,24 +67,7 @@ export default class RNHeader extends Component<Props> {
           zIndex: 3,
           height: 80
         }}
-        leftComponent={
-          <View>
-            {back ? (
-              <TouchableOpacity
-                style={styles.leftComp}
-                onPress={onBack || NavigationUtil.goBack}
-              >
-                <Icon.Ionicons
-                  name="ios-arrow-round-back"
-                  size={35}
-                  color={theme.colors.white}
-                />
-              </TouchableOpacity>
-            ) : (
-              !!leftComponent && leftComponent
-            )}
-          </View>
-        }
+        leftComponent={back ? <BackButton /> : !!leftComponent && leftComponent}
         centerComponent={
           <Text
             style={[
@@ -112,15 +96,12 @@ const styles = StyleSheet.create({
   leftComp: {
     height: "100%",
     flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
-    alignSelf: "center"
+    alignItems: "center"
   },
   rightComp: {
     height: "100%",
     justifyContent: "center",
     alignItems: "center",
-    marginRight: 10,
-    alignSelf: "center"
+    marginRight: 10
   }
 });

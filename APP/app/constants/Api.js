@@ -1,53 +1,48 @@
-const axios = require("axios").default;
-const NavigationUtil = require("../navigation/NavigationUtil").default;
-const { AsyncStorage, Alert } = require("react-native");
-function createAxios() {
-  // AsyncStorage.setItem("token", '773DE1FE9732F26F7552BC921CBE347E')
-  var axiosInstant = axios.create();
-  axiosInstant.defaults.baseURL = "http://www.json-generator.com/";
-  axiosInstant.defaults.timeout = 20000;
-  axiosInstant.defaults.headers = { "Content-Type": "application/json" };
+import R from "@app/assets/R";
+import NavigationUtil from "@app/navigation/NavigationUtil";
+import { showMessages } from "@app/utils/AlertHelper";
+const { API_STATUS } = require("@constant");
+const { AsyncStorage } = require("react-native");
 
-  axiosInstant.interceptors.request.use(
-    async config => {
-      config.headers.token = await AsyncStorage.getItem("token");
-      return config;
-    },
-    error => Promise.reject(error)
-  );
+type Data = {
+  code: number,
+  status: number,
+  message: string
+};
 
-  axiosInstant.interceptors.response.use(response => {
-    if (response.data && response.data.code == 403) {
-      setTimeout(() => {
-        Alert.alert("Thông báo", "Mất token");
-      }, 100);
+const createAPI = () => {
+  const APIInstant = require("axios").default.create();
+  APIInstant.defaults.baseURL = "http://www.json-generator.com/";
+  APIInstant.defaults.timeout = 20000;
+  APIInstant.defaults.headers = { "Content-Type": "application/json" };
+  APIInstant.interceptors.request.use(async config => {
+    config.headers.token = await AsyncStorage.getItem("token");
+    return config;
+  }, Promise.reject);
 
-      AsyncStorage.setItem("token", "", () => {
+  APIInstant.interceptors.response.use(response => {
+    const data: Data = response.data;
+    if (data && data.code === API_STATUS.RE_LOGIN) {
+      showMessages(R.strings().notification, R.strings().re_login);
+      AsyncStorage.setItem("token", "").then(() => {
         NavigationUtil.navigate("Auth");
       });
-    } else if (response.data && response.data.status != 1) {
-      // setTimeout(() => {
-      //   Alert.alert("Thông báo", response.data.message);
-      // }, 100);
-    }
+    } else if (data && data.status !== 1)
+      showMessages(R.strings().notification, data.message);
     return response;
   });
-  return axiosInstant;
-}
+  return APIInstant;
+};
 
-getAxios = createAxios();
+const getAPI = createAPI();
 
 /* Support function */
-function handleResult(api) {
-  return api.then(res => {
-    // if (res.data.status != 1) {
-    //   return Promise.reject(new Error("Co loi xay ra"));
-    // }
+const handleResult = api =>
+  api.then(res => {
     return Promise.resolve(res.data);
   });
-}
 
 module.exports = {
-  getUserInfo: () => handleResult(getAxios.get(`api/Service/getUserInfo`)),
-  getData: () => handleResult(getAxios.get(`api/json/get/cpugQYxUKq?indent=2`))
+  getUserInfo: () => handleResult(getAPI.get(`api/Service/getUserInfo`)),
+  getData: () => handleResult(getAPI.get(`api/json/get/cpugQYxUKq?indent=2`))
 };

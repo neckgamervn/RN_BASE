@@ -1,5 +1,5 @@
 const { GET_USER } = require("../actions/type");
-const { getUserInfo } = require("@api");
+const { getData, getUserInfo } = require("@app/constants/Api");
 const SagaHelper = require("@app/utils/SagaHelper").default;
 const NetworkSaga = {
   watchGetUser: SagaHelper(GET_USER, getUserInfo)

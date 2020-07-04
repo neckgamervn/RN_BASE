@@ -1,7 +1,12 @@
 import React, { Component } from "react";
-import { View, Text, TouchableOpacity, Image, Dimensions } from "react-native";
+import {
+  Dimensions,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View
+} from "react-native";
 import R from "@app/assets/R";
-import { StyleSheet } from "react-native";
 import FastImage from "react-native-fast-image";
 import { colors } from "@app/constants/Theme";
 
@@ -15,9 +20,9 @@ export default class Error extends Component<Props> {
     return (
       <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
         <FastImage source={R.images.image_error} style={styles.image} />
-        <Text style={styles.description}>{R.strings.account}</Text>
+        <Text style={styles.description}>{R.strings().account}</Text>
         <TouchableOpacity style={styles.button} onPress={reload}>
-          <Text style={styles.textReload}>{R.strings.try_agian}</Text>
+          <Text style={styles.textReload}>{R.strings().try_agian}</Text>
         </TouchableOpacity>
       </View>
     );

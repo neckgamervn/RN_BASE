@@ -4,7 +4,7 @@ import AuthLoadingScreen from "@app/screens/auth/AuthLoadingScreen";
 import LoginScreen from "@app/screens/auth/LoginScreen";
 import RegisterScreen from "@app/screens/auth/RegisterScreen";
 import ForgotPasswordScreen from "@app/screens/auth/ForgotPasswordScreen";
-import { SCREEN_ROUTER, SCREEN_ROUTER_AUTH, AUTH_LOADING } from "@constant";
+import { AUTH_LOADING, SCREEN_ROUTER, SCREEN_ROUTER_AUTH } from "@constant";
 import Main from "./MainTabNavigator";
 
 const Auth = createStackNavigator(

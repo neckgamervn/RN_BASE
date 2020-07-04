@@ -1,11 +1,12 @@
 import React, { Component } from "react";
-import { View, Text, TouchableOpacity } from "react-native";
-import { LoginButton, AccessToken, LoginManager } from "react-native-fbsdk";
+import { Text, TouchableOpacity, View } from "react-native";
+import { AccessToken, LoginManager } from "react-native-fbsdk";
 import NavigationUtil from "../../navigation/NavigationUtil";
 import {
   GoogleSignin,
   statusCodes
 } from "@react-native-community/google-signin";
+
 GoogleSignin.configure();
 
 export default class LoginScreen extends Component {

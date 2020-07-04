@@ -8,5 +8,6 @@ export default {
   enterprise: "Doanh nghiệp",
   product: "Sản phẩm",
   product_category: "D.mục sản phẩm",
-  post: "Tin đăng"
+  post: "Tin đăng",
+  re_login: "Đăng nhập lại"
 };

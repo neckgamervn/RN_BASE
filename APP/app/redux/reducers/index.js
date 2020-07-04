@@ -2,17 +2,16 @@ import { combineReducers } from "redux";
 import UserReducer from "./UserReducer";
 import { RESET } from "../actions/type";
 
-
- appReducer= combineReducers({
-  userReducer: UserReducer,
+appReducer = combineReducers({
+  userReducer: UserReducer
 });
 
-const initialState = appReducer({}, {})
+const initialState = appReducer({}, {});
 
-export default  rootReducer = (state, action) => {
+export default (rootReducer = (state, action) => {
   if (action.type === RESET) {
-    state = initialState
+    state = initialState;
   }
 
-  return appReducer(state, action)
-}
+  return appReducer(state, action);
+});

@@ -13,6 +13,7 @@ import AppNavigator from "./app/navigation/AppNavigator";
 import NavigationUtil from "./app/navigation/NavigationUtil";
 import store from "./app/redux/store";
 import OneSignalHelper from "@app/utils/OneSignalHelper";
+
 class App extends Component {
   render() {
     return (
@@ -38,6 +39,6 @@ class App extends Component {
 
 let codePushOptions = { checkFrequency: codePush.CheckFrequency.MANUAL };
 
-MyApp = codePush(codePushOptions)(App);
+const MyApp = codePush(codePushOptions)(App);
 
 export default MyApp;

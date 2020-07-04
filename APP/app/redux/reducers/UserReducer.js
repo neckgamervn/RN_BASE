@@ -1,10 +1,10 @@
 import { GET_USER } from "../actions/type";
-import { success, fail } from "@app/utils/SagaHelper";
+import { fail, success } from "@app/utils/SagaHelper";
 
 const initialState = {
   data: {},
   isLoading: true,
-  error: null
+  error: false
 };
 
 export default function(state = initialState, action) {
@@ -16,14 +16,14 @@ export default function(state = initialState, action) {
       return {
         ...state,
         isLoading: false,
-        error: null,
+        error: false,
         data: action.payload
       };
     }
     case fail(GET_USER): {
       return {
         ...state,
-        error: action.payload,
+        error: true,
         isLoading: false
       };
     }

@@ -1,16 +1,16 @@
-import i18 from "../i18n/i18n";
-        const strings = {
-            
-        home: i18.t("home"),
-        notification: i18.t("notification"),
-        user: i18.t("user"),
-        account: i18.t("account"),
-        update_user_info: i18.t("update_user_info"),
-        enterprise: i18.t("enterprise"),
-        product: i18.t("product"),
-        product_category: i18.t("product_category"),
-        post: i18.t("post")
-        }
- 
-        export default strings
-        
+import I18n from "react-native-i18n";
+function strings() {
+  return {
+    home: I18n.t("home", { defaultValue: "" }),
+    notification: I18n.t("notification", { defaultValue: "" }),
+    user: I18n.t("user", { defaultValue: "" }),
+    account: I18n.t("account", { defaultValue: "" }),
+    update_user_info: I18n.t("update_user_info", { defaultValue: "" }),
+    enterprise: I18n.t("enterprise", { defaultValue: "" }),
+    product: I18n.t("product", { defaultValue: "" }),
+    product_category: I18n.t("product_category", { defaultValue: "" }),
+    post: I18n.t("post", { defaultValue: "" }),
+    re_login: I18n.t("re_login", { defaultValue: "" })
+  };
+}
+export default strings;

@@ -1,9 +1,26 @@
-import React, { Component } from "react";
-import { View, Text } from "react-native";
+import React from "react";
 import { connect } from "react-redux";
-import RNText from "@app/components/RNText";
+import ScreenComponent from "@app/components/ScreenComponent";
+import { Image, Text, TouchableOpacity } from "react-native";
+import R from "@R";
 
-const UserScreen = props => <RNText text="UserScreen" />;
+const UserScreen = props => {
+  return (
+    <ScreenComponent
+      titleHeader={"UserScreen"}
+      back
+      rightComponent={<Text children={"hihi"} />}
+      renderView={
+        <TouchableOpacity>
+          <Image
+            source={R.images.ic_user}
+            style={{ width: 100, height: 100 }}
+          />
+        </TouchableOpacity>
+      }
+    />
+  );
+};
 
 const mapStateToProps = state => ({});
 
