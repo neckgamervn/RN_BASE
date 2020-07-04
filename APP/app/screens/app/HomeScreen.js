@@ -1,16 +1,9 @@
 import React, { Component } from "react";
 import { View, Text } from "react-native";
 import { connect } from "react-redux";
+import RNText from "@app/components/RNText";
 
-class HomeScreen extends Component {
-  render() {
-    return (
-      <View>
-        <Text> HomeScreen </Text>
-      </View>
-    );
-  }
-}
+const HomeScreen = props => <RNText text="Xin chao" />;
 
 const mapStateToProps = state => ({});
 

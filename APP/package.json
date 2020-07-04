@@ -3,6 +3,7 @@
   "version": "1.0",
   "private": true,
   "scripts": {
+    "8081": "adb reverse tcp:8081 tcp:8081 && yarn start",
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
@@ -10,7 +11,6 @@
     "li": "dot_clean -n . && node generateAssetResource.js",
     "lint": "eslint .",
     "pod": "cd ios && pod install && cd .. && react-native link",
-    "8081": "adb reverse tcp:8081 tcp:8081 && yarn start",
     "reverse": "adb reverse tcp:9090 tcp:9090; adb reverse tcp:19001 tcp:19001;"
   },
   "dependencies": {

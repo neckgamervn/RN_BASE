@@ -1,16 +1,9 @@
 import React, { Component } from "react";
 import { View, Text } from "react-native";
 import { connect } from "react-redux";
+import RNText from "@app/components/RNText";
 
-class UserScreen extends Component {
-  render() {
-    return (
-      <View>
-        <Text> UserScreen </Text>
-      </View>
-    );
-  }
-}
+const UserScreen = props => <RNText text="UserScreen" />;
 
 const mapStateToProps = state => ({});
 
