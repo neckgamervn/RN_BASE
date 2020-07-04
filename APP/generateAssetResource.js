@@ -11,16 +11,15 @@ genStringResource = () => {
     const stringName = Object.keys(json);
     fs.writeFileSync(
       "./app/assets/strings.js",
-      `import i18 from "../i18n/i18n";
-        const strings = {
-            ${stringName.map(string => {
-              path = `
-        ${string}: i18.t("${string}")`;
-              return path;
-            })}
-        }
- 
-        export default strings
+      `import I18n from 'react-native-i18n';
+function strings(){
+    return{${stringName.map(string => {
+      path = `
+        ${string}: I18n.t("${string}", { defaultValue: "" })`;
+      return path;
+    })}
+}}
+export default strings
         `
     );
     console.log(
@@ -55,5 +54,33 @@ export default images`,
   });
 }
 
+genStr = () => {
+  try {
+    const data = fs.readFileSync("./app/i18n/locales/vi.js", "utf8");
+    const json = Hjson.parse(
+      data.replace("export default", "").replace(";", "")
+    );
+    const stringName = Object.keys(json);
+    fs.writeFileSync(
+      "./app/assets/str.js",
+      `import i18 from '@i18';
+const strLang = {${stringName.map(string => {
+        path = `
+        ${string}: "${string}"`;
+        return path;
+      })}
+}
+export default strLang
+        `
+    );
+    console.log(
+      `============== Linked ${stringName.length} str ==============`
+    );
+  } catch (err) {
+    console.error(err);
+  }
+};
+
 genImageResource();
 genStringResource();
+genStr();
