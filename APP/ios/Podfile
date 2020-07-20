@@ -9,6 +9,8 @@ target 'base' do
 
   use_react_native!(:path => config["reactNativePath"])
 
+  pod 'CodePush', :path => '../node_modules/react-native-code-push'
+
   target 'baseTests' do
     inherit! :complete
     # Pods for testing

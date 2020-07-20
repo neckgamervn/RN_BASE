@@ -1,5 +1,5 @@
 <resources>
-	<string moduleConfig="true" name="reactNativeCodePush_androidDeploymentKey">14G78s0Tii6oJXkWD9khpJArW7aWIVFj9JTMZ</string>
+	<string moduleConfig="true" name="CodePushDeploymentKey">K5ij-GDIztnd4fmDHw2VMv-EcbwR-sxhF-dGn</string>
     <string name="app_name">base</string>
     <string name="appCenterCrashes_whenToSendCrashes" moduleConfig="true" translatable="false">DO_NOT_ASK_JAVASCRIPT</string>
     <string name="appCenterAnalytics_whenToEnableAnalytics" moduleConfig="true" translatable="false">ALWAYS_SEND</string>
