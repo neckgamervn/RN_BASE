@@ -2,13 +2,7 @@ import R from "@app/assets/R";
 import NavigationUtil from "@app/navigation/NavigationUtil";
 import { showMessages } from "@app/utils/AlertHelper";
 const { API_STATUS } = require("@constant");
-const { AsyncStorage } = require("react-native");
-
-type Data = {
-  code: number,
-  status: number,
-  message: string
-};
+const AsyncStorage = require("@react-native-community/async-storage").default;
 
 const createAPI = () => {
   const APIInstant = require("axios").default.create();
@@ -21,7 +15,7 @@ const createAPI = () => {
   }, Promise.reject);
 
   APIInstant.interceptors.response.use(response => {
-    const data: Data = response.data;
+    const data = response.data;
     if (data && data.code === API_STATUS.RE_LOGIN) {
       showMessages(R.strings().notification, R.strings().re_login);
       AsyncStorage.setItem("token", "").then(() => {

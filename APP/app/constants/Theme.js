@@ -14,7 +14,9 @@ const colors = {
   defaultBg: "#f3f4f6",
   inactive: "gray",
   indicator: "#24277e",
-  borderTopColor: "#dedede"
+  borderTopColor: "#dedede",
+  focusBottomBar: "#1b75bc",
+  blurBottomBar: "#585858"
 };
 
 const sizes = {};

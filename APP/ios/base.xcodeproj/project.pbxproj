@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* baseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* baseTests.m */; };
+		0696E94A24C5224200E2CEF8 /* file.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0696E94924C5224200E2CEF8 /* file.swift */; };
+		0696E94E24C57EE900E2CEF8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0696E94D24C57EE900E2CEF8 /* GoogleService-Info.plist */; };
 		0D282858C8004C38BAF23F33 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C1F256647F14665A6357FB3 /* Roboto-Bold.ttf */; };
-		0F9B3C9E235A0039008C6EA5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F9B3C9D235A0039008C6EA5 /* GoogleService-Info.plist */; };
 		0FCE9089236D34CF008A3E74 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FCE9088236D34CF008A3E74 /* StoreKit.framework */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
@@ -47,10 +48,12 @@
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* baseTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = baseTests.m; sourceTree = "<group>"; };
 		045A7EADC0D94CC493342BBF /* Roboto-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Regular.ttf"; path = "../app/assets/fonts/Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		0696E94824C5224100E2CEF8 /* base-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "base-Bridging-Header.h"; sourceTree = "<group>"; };
+		0696E94924C5224200E2CEF8 /* file.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = file.swift; sourceTree = "<group>"; };
+		0696E94D24C57EE900E2CEF8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "base/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0E5ED5BBF77941A886A79F35 /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-ThinItalic.ttf"; path = "../app/assets/fonts/Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
 		0F5CCC432358526B00404296 /* vi-VN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "vi-VN"; path = "vi-VN.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		0F7A0A45235DB5FD0021FFCF /* base.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = base.entitlements; path = base/base.entitlements; sourceTree = "<group>"; };
-		0F9B3C9D235A0039008C6EA5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0FCE9088236D34CF008A3E74 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		130D02B1F7A7425BA01CF5DE /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* Base.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Base.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,8 +140,8 @@
 		13B07FAE1A68108700A75B9A /* base */ = {
 			isa = PBXGroup;
 			children = (
+				0696E94D24C57EE900E2CEF8 /* GoogleService-Info.plist */,
 				0F7A0A45235DB5FD0021FFCF /* base.entitlements */,
-				0F9B3C9D235A0039008C6EA5 /* GoogleService-Info.plist */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -183,6 +186,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				0696E94924C5224200E2CEF8 /* file.swift */,
 				13B07FAE1A68108700A75B9A /* base */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* baseTests */,
@@ -190,6 +194,7 @@
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				5BF471CFFFFD4B188A484C0E /* Pods */,
 				FD5819BD365845FE83C0D200 /* Resources */,
+				0696E94824C5224100E2CEF8 /* base-Bridging-Header.h */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -301,6 +306,7 @@
 					};
 					13B07F861A680F5B00A75B9A = {
 						DevelopmentTeam = 5UEV5W6S97;
+						LastSwiftMigration = 1130;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -350,7 +356,6 @@
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
-				0F9B3C9E235A0039008C6EA5 /* GoogleService-Info.plist in Resources */,
 				EF916EC278F54137B03F5E1A /* Roboto-Black.ttf in Resources */,
 				5B450C791F5F4177AE06C673 /* Roboto-BlackItalic.ttf in Resources */,
 				0D282858C8004C38BAF23F33 /* Roboto-Bold.ttf in Resources */,
@@ -358,6 +363,7 @@
 				2F751FA79E004AA0BB095FD1 /* Roboto-Italic.ttf in Resources */,
 				E7974218762C4F95992799B7 /* Roboto-Light.ttf in Resources */,
 				7D6B8856873D489DB8EEC705 /* Roboto-LightItalic.ttf in Resources */,
+				0696E94E24C57EE900E2CEF8 /* GoogleService-Info.plist in Resources */,
 				970B512C126544A78C0BB657 /* Roboto-Medium.ttf in Resources */,
 				6C2164B87EAB41A3956294CB /* Roboto-MediumItalic.ttf in Resources */,
 				93F21E377E254D488602BA12 /* Roboto-Regular.ttf in Resources */,
@@ -571,6 +577,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				0696E94A24C5224200E2CEF8 /* file.swift in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -603,6 +610,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6EC81730303F77B6884D82A8 /* Pods-base-baseTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 5UEV5W6S97;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -612,6 +620,10 @@
 				INFOPLIST_FILE = baseTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-DFB_SONARKIT_ENABLED=1",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -627,12 +639,17 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F11D215F1D860A7A8A8DFEE1 /* Pods-base-baseTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				DEVELOPMENT_TEAM = 5UEV5W6S97;
 				INFOPLIST_FILE = baseTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-DFB_SONARKIT_ENABLED=1",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -649,6 +666,7 @@
 			baseConfigurationReference = 522B76DD726F2D5C8850D173 /* Pods-base.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = base/base.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -657,6 +675,10 @@
 				DEVELOPMENT_TEAM = 5UEV5W6S97;
 				INFOPLIST_FILE = base/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-DFB_SONARKIT_ENABLED=1",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -665,6 +687,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.base;
 				PRODUCT_NAME = Base;
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "base-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -675,6 +700,7 @@
 			baseConfigurationReference = D5BBE20646138ADE5FD6C601 /* Pods-base.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = base/base.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -682,6 +708,10 @@
 				DEVELOPMENT_TEAM = 5UEV5W6S97;
 				INFOPLIST_FILE = base/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-DFB_SONARKIT_ENABLED=1",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -690,6 +720,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.base;
 				PRODUCT_NAME = Base;
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "base-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 			};

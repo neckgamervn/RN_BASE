@@ -69,7 +69,7 @@ export default class ScreenComponent extends Component<Props, ViewProps> {
       titleHeader,
       rightComponent,
       leftComponent,
-      back,
+      back = true,
       dialogLoading,
       onBack,
       header,
@@ -80,7 +80,7 @@ export default class ScreenComponent extends Component<Props, ViewProps> {
         style={{ flex: 1 }}
         children={
           <View style={{ flex: 1, backgroundColor: colors.backgroundColor }}>
-            {titleHeader && (
+            {!!titleHeader && (
               <RNHeader
                 titleHeader={titleHeader}
                 back={back}

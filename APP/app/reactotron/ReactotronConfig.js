@@ -1,7 +1,8 @@
 import ReactTron from "reactotron-react-native";
 import { reactotronRedux } from "reactotron-redux";
 import sagaPlugin from "reactotron-redux-saga";
-import { AsyncStorage, NativeModules } from "react-native";
+import { NativeModules } from "react-native";
+const AsyncStorage = require("@react-native-community/async-storage").default;
 
 let scriptHostname = "localhost";
 if (__DEV__) {

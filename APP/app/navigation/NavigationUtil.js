@@ -1,4 +1,4 @@
-import { NavigationActions, StackActions } from "react-navigation";
+import { StackActions, CommonActions } from "@react-navigation/core";
 
 let _navigator; // eslint-disable-line
 
@@ -6,40 +6,22 @@ function setTopLevelNavigator(navigatorRef) {
   _navigator = navigatorRef;
 }
 
-function navigate(routeName, params) {
-  if (_navigator)
-    _navigator.dispatch(
-      NavigationActions.navigate({
-        routeName,
-        params
-      })
-    );
+function navigate(name, params) {
+  if (_navigator) _navigator.dispatch(CommonActions.navigate(name, params));
 }
-function replace(routeName, params) {
-  if (_navigator)
-    _navigator.dispatch(
-      StackActions.replace({
-        routeName,
-        params
-      })
-    );
+function replace(name, params) {
+  if (_navigator) _navigator.dispatch(StackActions.replace(name, params));
 }
-function push(routeName, params) {
-  if (_navigator)
-    _navigator.dispatch(
-      StackActions.push({
-        routeName,
-        params
-      })
-    );
+function push(name, params) {
+  if (_navigator) _navigator.dispatch(StackActions.push(name, params));
 }
-function goBack(immediate) {
-  // _navigator.goBack();
-  _navigator.dispatch(NavigationActions.back({ immediate }));
+function goBack() {
+  if (_navigator) _navigator.dispatch(CommonActions.goBack());
 }
 function pop(count) {
-  _navigator.dispatch(StackActions.pop({ n: count || 1 }));
+  if (_navigator) _navigator.dispatch(StackActions.pop(count || 1));
 }
+
 export default {
   navigate,
   setTopLevelNavigator,

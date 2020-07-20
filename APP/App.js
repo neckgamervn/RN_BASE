@@ -18,11 +18,7 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <AppNavigator
-          ref={navigatorRef =>
-            NavigationUtil.setTopLevelNavigator(navigatorRef)
-          }
-        />
+        <AppNavigator />
       </Provider>
     );
   }

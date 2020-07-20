@@ -8,10 +8,10 @@ const UserScreen = props => {
   return (
     <ScreenComponent
       titleHeader={"UserScreen"}
-      back
+      back={false}
       rightComponent={<Text children={"hihi"} />}
       renderView={
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => {}}>
           <Image
             source={R.images.ic_user}
             style={{ width: 100, height: 100 }}
