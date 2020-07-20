@@ -1,5 +1,6 @@
 const images = {
     
+    ic_back: require("./images/ic_back.png"),
     ic_enterprise: require("./images/ic_enterprise.png"),
     ic_home: require("./images/ic_home.png"),
     ic_notify: require("./images/ic_notify.png"),

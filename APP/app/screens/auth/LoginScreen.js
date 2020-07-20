@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Text, TouchableOpacity, View } from "react-native";
+import { Text, TouchableOpacity, View, Platform } from "react-native";
 import { AccessToken, LoginManager } from "react-native-fbsdk";
 import NavigationUtil from "../../navigation/NavigationUtil";
 import {
@@ -105,16 +105,18 @@ export default class LoginScreen extends Component {
             >
               <Text> Google Login </Text>
             </TouchableOpacity>
-            <TouchableOpacity
-              style={{
-                marginTop: 50
-              }}
-              onPress={() => {
-                this._appleLogin();
-              }}
-            >
-              <Text> Apple Login </Text>
-            </TouchableOpacity>
+            {Platform.OS == "ios" && (
+              <TouchableOpacity
+                style={{
+                  marginTop: 50
+                }}
+                onPress={() => {
+                  this._appleLogin();
+                }}
+              >
+                <Text> Apple Login </Text>
+              </TouchableOpacity>
+            )}
           </View>
         }
       />

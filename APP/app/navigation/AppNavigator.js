@@ -7,7 +7,10 @@ import {
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import {
+  createBottomTabNavigator,
+  BottomTabBar
+} from "@react-navigation/bottom-tabs";
 import UserScreen from "@app/screens/app/UserScreen";
 import NavigationUtil from "./NavigationUtil";
 import R from "@app/assets/R";
@@ -15,6 +18,7 @@ import FastImage from "react-native-fast-image";
 import { colors } from "@app/constants/Theme";
 import LoginScreen from "@app/screens/auth/LoginScreen";
 import HomeScreen from "@app/screens/app/HomeScreen";
+import { Platform } from "react-native";
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 
@@ -28,6 +32,15 @@ const TabBarIcon = {
 
 const MainTab = () => (
   <Tab.Navigator
+    tabBar={props => (
+      <BottomTabBar
+        {...props}
+        style={{
+          ...props.style,
+          height: Platform.OS != "ios" ? 60 : 80
+        }}
+      />
+    )}
     screenOptions={({ navigation, route }) => ({
       tabBarIcon: ({ focused, color, size }) => {
         const sizeIcon = focused ? 30 : 25;

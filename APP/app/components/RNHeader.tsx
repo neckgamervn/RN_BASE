@@ -10,6 +10,7 @@ import { Header } from "react-native-elements";
 import NavigationUtil from "../navigation/NavigationUtil";
 import * as theme from "../constants/Theme";
 import R from "@app/assets/R";
+import FastImage from "react-native-fast-image";
 
 interface Props {
   color?: string;
@@ -26,8 +27,6 @@ interface Props {
    * Title thanh header
    */
   titleHeader: string;
-
-  onBack?: () => void;
 }
 
 interface BackProps {
@@ -42,7 +41,12 @@ export class BackButton extends Component<BackProps> {
         style={[style || styles.leftComp]}
         onPress={NavigationUtil.goBack}
       >
-        <Text children={"back"} />
+        <FastImage
+          source={R.images.ic_back}
+          style={{ width: 30, height: 30 }}
+          tintColor={theme.colors.white}
+          resizeMode="contain"
+        />
       </TouchableOpacity>
     );
   }
@@ -55,8 +59,7 @@ export default class RNHeader extends Component<Props> {
       back,
       titleHeader,
       rightComponent,
-      leftComponent,
-      onBack
+      leftComponent
     } = this.props;
     return (
       <Header
@@ -64,10 +67,9 @@ export default class RNHeader extends Component<Props> {
         containerStyle={{
           backgroundColor: theme.colors.headerColor,
           borderBottomColor: theme.colors.headerColor,
-          zIndex: 3,
-          height: 80
+          height: 90
         }}
-        leftComponent={back ? <BackButton /> : !!leftComponent && leftComponent}
+        leftComponent={back ? <BackButton /> : leftComponent}
         centerComponent={
           <Text
             style={[
@@ -75,13 +77,13 @@ export default class RNHeader extends Component<Props> {
                 fontSize: 18,
                 fontFamily: R.fonts.quicksand_medium
               },
-              { color: color ? color : "white" }
+              { color: color || "white" }
             ]}
           >
             {titleHeader}
           </Text>
         }
-        rightComponent={rightComponent && rightComponent}
+        rightComponent={rightComponent}
         statusBarProps={{
           barStyle: "light-content",
           translucent: true,
