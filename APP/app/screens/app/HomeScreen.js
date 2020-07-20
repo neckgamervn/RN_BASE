@@ -9,7 +9,9 @@ import {
   SCREEN_ROUTER_AUTH
 } from "@app/constants/Constant";
 import R from "@app/assets/R";
-
+import { callAPIHook } from "@app/utils/CallApiHelper";
+import { getData } from "@api";
+import imagePickerHelper from "@app/utils/ImagePickerHelper";
 const HomeScreen = props => (
   <ScreenComponent
     titleHeader={R.strings().home}
@@ -18,8 +20,11 @@ const HomeScreen = props => (
       <TouchableOpacity
         children={<Text children="Login SCreen" />}
         onPress={() => {
-          NavigationUtil.navigate(SCREEN_ROUTER_AUTH.LOGIN, {
-            hoang: "123"
+          // NavigationUtil.navigate(SCREEN_ROUTER_AUTH.LOGIN, {
+          //   hoang: "123"
+          // });
+          imagePickerHelper(res => {
+            // console.log(res);
           });
         }}
       />

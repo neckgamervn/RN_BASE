@@ -1,6 +1,6 @@
-import R from "@app/assets/R";
-import NavigationUtil from "@app/navigation/NavigationUtil";
-import { showMessages } from "@app/utils/AlertHelper";
+const R = require("@app/assets/R").default;
+const NavigationUtil = require("@app/navigation/NavigationUtil").default;
+const { showMessages } = require("@app/utils/AlertHelper");
 const { API_STATUS } = require("@constant");
 const AsyncStorage = require("@react-native-community/async-storage").default;
 

@@ -9,5 +9,9 @@ export default {
   product: "Sản phẩm",
   product_category: "D.mục sản phẩm",
   post: "Tin đăng",
-  re_login: "Đăng nhập lại"
+  re_login: "Đăng nhập lại",
+  select: "Chọn",
+  cancel: "Huỷ",
+  from_library: "Từ thu viện",
+  take_photo: "Chụp ảnh"
 };

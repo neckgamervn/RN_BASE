@@ -299,7 +299,9 @@ PODS:
   - react-native-fbsdk/Share (2.0.0):
     - FBSDKShareKit (~> 7.0)
     - React
-  - react-native-image-picker (1.1.0):
+  - react-native-image-picker (2.3.3):
+    - React
+  - react-native-image-resizer (1.2.3):
     - React
   - react-native-onesignal (3.4.2):
     - OneSignal (= 2.11.2)
@@ -376,7 +378,7 @@ PODS:
     - React
     - SDWebImage (~> 5.0)
     - SDWebImageWebPCoder (~> 0.4.1)
-  - RNGestureHandler (1.4.1):
+  - RNGestureHandler (1.6.1):
     - React
   - RNGoogleSignin (4.0.3):
     - GoogleSignIn (~> 5.0.0)
@@ -442,6 +444,7 @@ DEPENDENCIES:
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
   - react-native-fbsdk (from `../node_modules/react-native-fbsdk`)
   - react-native-image-picker (from `../node_modules/react-native-image-picker`)
+  - react-native-image-resizer (from `../node_modules/react-native-image-resizer`)
   - react-native-onesignal (from `../node_modules/react-native-onesignal`)
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
   - React-RCTActionSheet (from `../node_modules/react-native/Libraries/ActionSheetIOS`)
@@ -533,6 +536,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-fbsdk"
   react-native-image-picker:
     :path: "../node_modules/react-native-image-picker"
+  react-native-image-resizer:
+    :path: "../node_modules/react-native-image-resizer"
   react-native-onesignal:
     :path: "../node_modules/react-native-onesignal"
   react-native-safe-area-context:
@@ -622,7 +627,8 @@ SPEC CHECKSUMS:
   React-jsiexecutor: 7ab9cdcdd18d57652fb041f8a147fe9658d4e00a
   React-jsinspector: 2e28bb487e42dda6c94dbfa0c648d1343767a0fb
   react-native-fbsdk: 00c15d138bba6d4efa628670886fc58cec858c19
-  react-native-image-picker: 7a85cf7b0a53845f03ae52fb4592a2748ded069b
+  react-native-image-picker: 3d3f85baabca60a00b75fb8facc1376db7bbdafa
+  react-native-image-resizer: 2f1577efa3bc762597681f530c8e8d05ce0ceeb3
   react-native-onesignal: b44fadea4dff727f61cc6018a91beeb6a826cd84
   react-native-safe-area-context: 344b969c45af3d8464d36e8dea264942992ef033
   React-RCTActionSheet: 1702a1a85e550b5c36e2e03cb2bd3adea053de95
@@ -639,7 +645,7 @@ SPEC CHECKSUMS:
   RNCAsyncStorage: 60a80e72d95bf02a01cace55d3697d9724f0d77f
   RNCMaskedView: 5a8ec07677aa885546a0d98da336457e2bea557f
   RNFastImage: 35ae972d6727c84ee3f5c6897e07f84d0a3445e9
-  RNGestureHandler: 4cb47a93019c1a201df2644413a0a1569a51c8aa
+  RNGestureHandler: 8f09cd560f8d533eb36da5a6c5a843af9f056b38
   RNGoogleSignin: ccf71ee4b6cfd324fd788a41e457e2043838c0d9
   RNI18n: e2f7e76389fcc6e84f2c8733ea89b92502351fd8
   RNIap: 251e9b516965d84eecc67151d76c939e8f5481ea
@@ -652,6 +658,6 @@ SPEC CHECKSUMS:
   Yoga: d5bd05a2b6b94c52323745c2c2b64557c8c66f64
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
-PODFILE CHECKSUM: a96db594b717dd241d97be87abf4e14b6a9ff7c5
+PODFILE CHECKSUM: aade2623e7707e705b615004f01df680abf74e6b
 
 COCOAPODS: 1.9.3

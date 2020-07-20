@@ -10,7 +10,11 @@ function strings(){
         product: I18n.t("product", { defaultValue: "" }),
         product_category: I18n.t("product_category", { defaultValue: "" }),
         post: I18n.t("post", { defaultValue: "" }),
-        re_login: I18n.t("re_login", { defaultValue: "" })
+        re_login: I18n.t("re_login", { defaultValue: "" }),
+        select: I18n.t("select", { defaultValue: "" }),
+        cancel: I18n.t("cancel", { defaultValue: "" }),
+        from_library: I18n.t("from_library", { defaultValue: "" }),
+        take_photo: I18n.t("take_photo", { defaultValue: "" })
 }}
 export default strings
         
