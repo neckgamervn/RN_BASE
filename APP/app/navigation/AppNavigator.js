@@ -1,9 +1,4 @@
-import {
-  AUTH_LOADING,
-  SCREEN_ROUTER_APP,
-  SCREEN_ROUTER,
-  SCREEN_ROUTER_AUTH
-} from "@constant";
+import { SCREEN_ROUTER_APP, SCREEN_ROUTER } from "@constant";
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
@@ -11,20 +6,19 @@ import {
   createBottomTabNavigator,
   BottomTabBar
 } from "@react-navigation/bottom-tabs";
-import UserScreen from "@app/screens/app/UserScreen";
+import UserScreen from "@app/screens/app/user/UserScreen";
 import NavigationUtil from "./NavigationUtil";
 import R from "@app/assets/R";
 import FastImage from "react-native-fast-image";
 import { colors } from "@app/constants/Theme";
-import LoginScreen from "@app/screens/auth/LoginScreen";
-import HomeScreen from "@app/screens/app/HomeScreen";
+import HomeScreen from "@app/screens/app/home/HomeScreen";
 import { Platform } from "react-native";
+import StackApp from "./stack/StackApp";
+import StackBottomBar from "./stack/StackBottomBar";
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
-
 const { ic_home, ic_user } = R.images;
 const { HOME, USER } = SCREEN_ROUTER_APP;
-const { LOGIN } = SCREEN_ROUTER_AUTH;
 const TabBarIcon = {
   [HOME]: ic_home,
   [USER]: ic_user
@@ -60,8 +54,9 @@ const MainTab = () => (
       }
     })}
   >
-    <Tab.Screen name={HOME} component={HomeScreen} />
-    <Tab.Screen name={USER} component={UserScreen} />
+    {Object.keys(StackBottomBar).map((elem, index) => (
+      <Tab.Screen key={index} name={elem} component={StackBottomBar[elem]} />
+    ))}
   </Tab.Navigator>
 );
 
@@ -79,7 +74,13 @@ export default props => {
             children={
               <>
                 <Stack.Screen name={SCREEN_ROUTER.MAIN} component={MainTab} />
-                <Stack.Screen name={LOGIN} component={LoginScreen} />
+                {Object.keys(StackApp).map((elem, index) => (
+                  <Stack.Screen
+                    key={index}
+                    name={elem}
+                    component={StackApp[elem]}
+                  />
+                ))}
               </>
             }
           />

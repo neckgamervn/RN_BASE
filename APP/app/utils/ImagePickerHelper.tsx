@@ -24,7 +24,7 @@ const imagePickerHelper = async res => {
         imagePickerHelper(res);
       });
     }
-  }
+  } else startPickImage(res);
 };
 
 const startPickImage = res => {
@@ -85,8 +85,7 @@ const _resizeImage = async (uri, actualWidth, actualHeight, res) => {
       actualHeight,
       "JPEG",
       70,
-      0,
-      ""
+      0
     );
     console.log("resize success");
     url = response.uri;

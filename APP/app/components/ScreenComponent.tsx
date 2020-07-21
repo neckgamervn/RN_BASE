@@ -18,7 +18,7 @@ interface Props {
   /**
    * View hiển thị
    */
-  renderView: JSX.Element;
+  renderView: React.ReactNode;
   /**
    * State hiện thị màn hình Loading
    */
@@ -34,11 +34,11 @@ interface Props {
   /**
    * View nút phải
    */
-  rightComponent?: JSX.Element;
+  rightComponent?: React.ReactNode;
   /**
    * View nút trái
    */
-  leftComponent?: JSX.Element;
+  leftComponent?: React.ReactNode;
   /**
    * Title thanh header
    */
@@ -48,9 +48,10 @@ interface Props {
 
   onBack?: () => void;
 
-  header?: JSX.Element;
+  header?: React.ReactNode;
 
   dialogLoading?: boolean;
+
   isSafeAre?: boolean;
 }
 

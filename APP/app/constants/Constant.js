@@ -1,18 +1,20 @@
 module.exports = {
   SCREEN_ROUTER: {
-    MAIN: "Main",
-    AUTH: "Auth"
+    MAIN: "MAIN",
+    AUTH: "AUTH"
   },
   SCREEN_ROUTER_AUTH: {
-    LOGIN: "Login",
-    FORGOT_PASS: "ForgotPassword",
-    REGISTER: "Register"
+    LOGIN: "LOGIN",
+    FORGOT_PASS: "FORGOT_PASS",
+    REGISTER: "REGISTER"
   },
   SCREEN_ROUTER_APP: {
-    HOME: "Home",
-    USER: "User"
+    HOME: "HOME",
+    USER: "USER",
+    HOME_DETAIL: "HOME_DETAIL",
+    USER_DETAIL: "USER_DETAIL"
   },
-  AUTH_LOADING: "AuthLoading",
+  AUTH_LOADING: "AUTH_LOADING",
   API_STATUS: {
     RE_LOGIN: 403
   }

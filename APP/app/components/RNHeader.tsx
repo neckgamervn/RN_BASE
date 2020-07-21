@@ -18,11 +18,11 @@ interface Props {
   /**
    * View nút phải
    */
-  rightComponent?: JSX.Element;
+  rightComponent?: React.ReactNode;
   /**
    * View nút trái
    */
-  leftComponent?: JSX.Element;
+  leftComponent?: React.ReactNode;
   /**
    * Title thanh header
    */
