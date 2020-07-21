@@ -4,7 +4,7 @@ version: 0.63.1
 # Struct
 
 ## assets
-  - images: name must be `ic_home.png` or `img_home.png`
+  - images: name must be `ic_home.png` or `img_home.png` then `yarn li` on terminal for using it by `R.images.ic_home`
 ## components
   - ScreenComponent: 
   
