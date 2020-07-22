@@ -1,9 +1,11 @@
 import { combineReducers } from "redux";
 import UserReducer from "./UserReducer";
 import { RESET } from "../actions/type";
+import SwitchNavigatorReducer from "./SwitchNavigatorReducer";
 
 appReducer = combineReducers({
-  userReducer: UserReducer
+  UserReducer,
+  SwitchNavigatorReducer
 });
 
 const initialState = appReducer({}, {});

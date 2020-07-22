@@ -3,19 +3,20 @@ import { connect } from "react-redux";
 import ScreenComponent from "@app/components/ScreenComponent";
 import { Image, Text, TouchableOpacity } from "react-native";
 import R from "@R";
+import NavigationUtil from "@app/navigation/NavigationUtil";
+import { SCREEN_ROUTER } from "@app/constants/Constant";
 
 const HomeDetailScreen = props => {
   return (
     <ScreenComponent
       titleHeader={"HomeDetailScreen"}
-      back={false}
-      rightComponent={<Text children={"hihi"} />}
       renderView={
-        <TouchableOpacity onPress={() => {}}>
-          <Image
-            source={R.images.ic_user}
-            style={{ width: 100, height: 100 }}
-          />
+        <TouchableOpacity
+          onPress={() => {
+            NavigationUtil.navigate(SCREEN_ROUTER.AUTH);
+          }}
+        >
+          <Text children="Login" />
         </TouchableOpacity>
       }
     />

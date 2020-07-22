@@ -1,4 +1,4 @@
-import { Dimensions } from "react-native";
+import { Dimensions, StyleSheet } from "react-native";
 
 const dimension = ({ width, height } = Dimensions.get("window"));
 
@@ -40,4 +40,37 @@ const fonts = {
   }
 };
 
-export { colors, sizes, fonts, dimension };
+const styles = StyleSheet.create({
+  androidSafeView: {
+    flex: 1
+    // paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
+  },
+
+  test: {
+    flex: 1,
+    backgroundColor: colors.primary,
+    justifyContent: "center",
+    alignItems: "center"
+  },
+
+  containter: {
+    flex: 1,
+    backgroundColor: colors.backgroundColor
+  },
+
+  menu: {
+    flex: 1,
+    height: width * 0.25
+  },
+
+  scrollHoz: {
+    width: width * 0.9,
+    height: height * 0.3,
+    backgroundColor: colors.white,
+    borderRadius: 15
+  }
+});
+
+export { colors, sizes, fonts, styles, dimension };
+const theme = { colors, sizes, fonts, styles, dimension };
+export default theme;

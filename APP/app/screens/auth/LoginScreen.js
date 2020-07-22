@@ -13,6 +13,7 @@ import appleAuth, {
   AppleAuthRequestScope,
   AppleAuthCredentialState
 } from "@invertase/react-native-apple-authentication";
+import { SCREEN_ROUTER_AUTH } from "@app/constants/Constant";
 GoogleSignin.configure();
 
 export default class LoginScreen extends Component {
@@ -88,6 +89,13 @@ export default class LoginScreen extends Component {
               alignItems: "center"
             }}
           >
+            <TouchableOpacity
+              onPress={() => {
+                NavigationUtil.navigate(SCREEN_ROUTER_AUTH.REGISTER);
+              }}
+            >
+              <Text> Register </Text>
+            </TouchableOpacity>
             <TouchableOpacity
               onPress={() => {
                 this._fbLogin();

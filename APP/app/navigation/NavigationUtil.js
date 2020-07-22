@@ -1,4 +1,5 @@
 import { StackActions, CommonActions } from "@react-navigation/core";
+import reactotron from "reactotron-react-native";
 
 let _navigator; // eslint-disable-line
 
@@ -21,8 +22,15 @@ function goBack() {
 function pop(count) {
   if (_navigator) _navigator.dispatch(StackActions.pop(count || 1));
 }
+function dismiss() {
+  if (_navigator) {
+    _navigator.dispatch(StackActions.popToTop());
+    goBack();
+  }
+}
 
 export default {
+  dismiss,
   navigate,
   setTopLevelNavigator,
   goBack,

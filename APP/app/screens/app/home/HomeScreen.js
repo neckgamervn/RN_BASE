@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { Text, TouchableOpacity } from "react-native";
+import { Text, TouchableOpacity, View } from "react-native";
 import ScreenComponent from "@app/components/ScreenComponent";
 import NavigationUtil from "@app/navigation/NavigationUtil";
 import {
@@ -12,25 +12,24 @@ import R from "@app/assets/R";
 import { callAPIHook } from "@app/utils/CallApiHelper";
 import { getData } from "@api";
 import imagePickerHelper from "@app/utils/ImagePickerHelper";
-const HomeScreen = props => (
-  <ScreenComponent
-    titleHeader={R.strings().home}
-    back={false}
-    renderView={
-      <TouchableOpacity
-        children={<Text children="Login SCreen" />}
-        onPress={() => {
-          // NavigationUtil.navigate(SCREEN_ROUTER_AUTH.LOGIN, {
-          //   hoang: "123"
-          // });
-          imagePickerHelper(res => {
-            // console.log(res);
-          });
-        }}
-      />
-    }
-  />
-);
+const HomeScreen = props => {
+  return (
+    <ScreenComponent
+      titleHeader={R.strings().home}
+      back={false}
+      renderView={
+        <View style={{ flex: 1 }}>
+          <TouchableOpacity
+            onPress={() => {
+              NavigationUtil.navigate(SCREEN_ROUTER_APP.HOME_DETAIL);
+            }}
+            children={<Text children={"Home Detail"} />}
+          />
+        </View>
+      }
+    />
+  );
+};
 
 const mapStateToProps = state => ({});
 

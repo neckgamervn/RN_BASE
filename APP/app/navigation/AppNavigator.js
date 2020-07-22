@@ -1,4 +1,8 @@
-import { SCREEN_ROUTER_APP, SCREEN_ROUTER } from "@constant";
+import {
+  SCREEN_ROUTER_APP,
+  SCREEN_ROUTER,
+  SCREEN_ROUTER_AUTH
+} from "@constant";
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
@@ -14,7 +18,13 @@ import { colors } from "@app/constants/Theme";
 import HomeScreen from "@app/screens/app/home/HomeScreen";
 import { Platform } from "react-native";
 import StackApp from "./stack/StackApp";
+import StackAuth from "./stack/StackApp";
 import StackBottomBar from "./stack/StackBottomBar";
+import { connect } from "react-redux";
+import SplashScreen from "@app/screens/app/SplashScreen";
+import LoginScreen from "@app/screens/auth/LoginScreen";
+import RegisterScreen from "@app/screens/auth/RegisterScreen";
+import ForgotPassword from "@app/screens/auth/ForgotPasswordScreen";
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 const { ic_home, ic_user } = R.images;
@@ -60,32 +70,63 @@ const MainTab = () => (
   </Tab.Navigator>
 );
 
-export default props => {
+const authStackScreen = () => (
+  <Stack.Navigator
+    headerMode="none"
+    mode="modal"
+    children={
+      <>
+        <Stack.Screen name={SCREEN_ROUTER_AUTH.LOGIN} component={LoginScreen} />
+        <Stack.Screen
+          name={SCREEN_ROUTER_AUTH.REGISTER}
+          component={RegisterScreen}
+        />
+        <Stack.Screen
+          name={SCREEN_ROUTER_AUTH.FORGOT_PASS}
+          component={ForgotPassword}
+        />
+      </>
+    }
+  />
+);
+
+const renderSwitch = switchApp => {
+  switch (switchApp) {
+    case SCREEN_ROUTER.SPLASH:
+      return (
+        <Stack.Screen name={SCREEN_ROUTER.SPLASH} component={SplashScreen} />
+      );
+
+    case SCREEN_ROUTER.MAIN:
+      return (
+        <>
+          <Stack.Screen name={SCREEN_ROUTER.MAIN} component={MainTab} />
+          {Object.keys(StackApp).map((elem, index) => (
+            <Stack.Screen key={index} name={elem} component={StackApp[elem]} />
+          ))}
+          <Stack.Screen name={SCREEN_ROUTER.AUTH} component={authStackScreen} />
+        </>
+      );
+  }
+};
+
+export default connect(
+  state => ({
+    switch: state.SwitchNavigatorReducer.switch
+  }),
+  {}
+)(props => {
   return (
     <NavigationContainer
       ref={navigatorRef => {
         NavigationUtil.setTopLevelNavigator(navigatorRef);
       }}
       children={
-        <>
-          <Stack.Navigator
-            headerMode="none"
-            mode="modal"
-            children={
-              <>
-                <Stack.Screen name={SCREEN_ROUTER.MAIN} component={MainTab} />
-                {Object.keys(StackApp).map((elem, index) => (
-                  <Stack.Screen
-                    key={index}
-                    name={elem}
-                    component={StackApp[elem]}
-                  />
-                ))}
-              </>
-            }
-          />
-        </>
+        <Stack.Navigator
+          headerMode="none"
+          children={renderSwitch(props.switch)}
+        />
       }
     />
   );
-};
+});
