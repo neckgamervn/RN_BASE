@@ -4,7 +4,7 @@ const dimension = ({ width, height } = Dimensions.get("window"));
 
 const colors = {
   white: "#ffffff",
-  primary: "#f3f3f3",
+  primary: "#1b75bc",
   primaryDark: "#125183",
   primaryDark1: "#2E384D",
   bottombarBg: "#fafafa",

@@ -1,12 +1,8 @@
-const R = require("@app/assets/R").default;
-const NavigationUtil = require("@app/navigation/NavigationUtil").default;
-const { showMessages } = require("@app/utils/AlertHelper");
-const { API_STATUS } = require("@constant");
 const AsyncStorage = require("@react-native-community/async-storage").default;
 
 const createAPI = () => {
   const APIInstant = require("axios").default.create();
-  APIInstant.defaults.baseURL = "http://www.json-generator.com/";
+  APIInstant.defaults.baseURL = "http://localhost:5000/";
   APIInstant.defaults.timeout = 20000;
   APIInstant.defaults.headers = { "Content-Type": "application/json" };
   APIInstant.interceptors.request.use(async config => {
@@ -15,14 +11,6 @@ const createAPI = () => {
   }, Promise.reject);
 
   APIInstant.interceptors.response.use(response => {
-    const data = response.data;
-    if (data && data.code === API_STATUS.RE_LOGIN) {
-      showMessages(R.strings().notification, R.strings().re_login);
-      AsyncStorage.setItem("token", "").then(() => {
-        NavigationUtil.navigate("Auth");
-      });
-    } else if (data && data.status !== 1)
-      showMessages(R.strings().notification, data.message);
     return response;
   });
   return APIInstant;
@@ -38,5 +26,11 @@ const handleResult = api =>
 
 module.exports = {
   getUserInfo: () => handleResult(getAPI.get(`api/Service/getUserInfo`)),
+  getImage: () =>
+    handleResult(
+      getAPI.get(
+        `aws?Bucket=custom-labels-console-us-east-1-3086b3404b&Name=assets/sac/1597916578/image1.jpg`
+      )
+    ),
   getData: () => handleResult(getAPI.get(`api/json/get/cpugQYxUKq?indent=2`))
 };

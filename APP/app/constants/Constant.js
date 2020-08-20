@@ -10,10 +10,8 @@ module.exports = {
     REGISTER: "REGISTER"
   },
   SCREEN_ROUTER_APP: {
-    HOME: "HOME",
-    USER: "USER",
-    HOME_DETAIL: "HOME_DETAIL",
-    USER_DETAIL: "USER_DETAIL"
+    SPLASH: "SPLASH",
+    INPUT: "INPUT"
   },
   API_STATUS: {
     RE_LOGIN: 403

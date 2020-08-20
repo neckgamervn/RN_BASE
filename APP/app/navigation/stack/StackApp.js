@@ -1,10 +1,7 @@
 const { SCREEN_ROUTER_APP } = require("@app/constants/Constant");
-const HomeDetailScreen = require("@app/screens/app/home/HomeDetailScreen")
-  .default;
-const UserDetailScreen = require("@app/screens/app/user/UserDetailScreen")
-  .default;
-const { HOME_DETAIL, USER_DETAIL } = SCREEN_ROUTER_APP;
+const { default: InputScreen } = require("@app/screens/app/InputScreen");
+const { default: SplashScreen } = require("@app/screens/app/SplashScreen");
 module.exports = {
-  [HOME_DETAIL]: HomeDetailScreen,
-  [USER_DETAIL]: UserDetailScreen
+  [SCREEN_ROUTER_APP.INPUT]: InputScreen,
+  [SCREEN_ROUTER_APP.SPLASH]: SplashScreen
 };
