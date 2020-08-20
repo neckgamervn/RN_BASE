@@ -64,7 +64,7 @@ class SplashScreen extends Component {
                     <>
                       <View
                         style={{
-                          borderWidth: 2,
+                          borderWidth: 3,
                           width: BoundingBox.Width * width,
                           height: BoundingBox.Height * width,
                           top: BoundingBox.Top * width,

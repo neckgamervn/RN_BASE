@@ -26,11 +26,7 @@ const handleResult = api =>
 
 module.exports = {
   getUserInfo: () => handleResult(getAPI.get(`api/Service/getUserInfo`)),
-  getImage: () =>
-    handleResult(
-      getAPI.get(
-        `aws?Bucket=custom-labels-console-us-east-1-3086b3404b&Name=assets/sac/1597916578/image1.jpg`
-      )
-    ),
+  getImage: ({ Bucket, Name }) =>
+    handleResult(getAPI.get(`aws?Bucket=${Bucket}&Name=${Name}`)),
   getData: () => handleResult(getAPI.get(`api/json/get/cpugQYxUKq?indent=2`))
 };
