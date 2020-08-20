@@ -2,7 +2,7 @@ const AsyncStorage = require("@react-native-community/async-storage").default;
 
 const createAPI = () => {
   const APIInstant = require("axios").default.create();
-  APIInstant.defaults.baseURL = "http://localhost:5000/";
+  APIInstant.defaults.baseURL = "";
   APIInstant.defaults.timeout = 20000;
   APIInstant.defaults.headers = { "Content-Type": "application/json" };
   APIInstant.interceptors.request.use(async config => {
@@ -26,7 +26,7 @@ const handleResult = api =>
 
 module.exports = {
   getUserInfo: () => handleResult(getAPI.get(`api/Service/getUserInfo`)),
-  getImage: ({ Bucket, Name }) =>
-    handleResult(getAPI.get(`aws?Bucket=${Bucket}&Name=${Name}`)),
+  getImage: ({ Bucket, Name, baseUrl }) =>
+    handleResult(getAPI.get(`${baseUrl}/aws?Bucket=${Bucket}&Name=${Name}`)),
   getData: () => handleResult(getAPI.get(`api/json/get/cpugQYxUKq?indent=2`))
 };

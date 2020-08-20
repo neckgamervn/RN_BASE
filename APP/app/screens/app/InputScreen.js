@@ -16,6 +16,7 @@ const InputScreen = props => {
     "custom-labels-console-us-east-1-3086b3404b"
   );
   const [Name, setName] = useState("assets/sac/1597916578/image1.jpg");
+  const [baseUrl, setbaseUrl] = useState("http://localhost:5000");
   return (
     <ScreenComponent
       back={false}
@@ -26,6 +27,17 @@ const InputScreen = props => {
             style={{ flex: 1, justifyContent: "center" }}
             children={
               <>
+                <TextInput
+                  onChangeText={setbaseUrl}
+                  value={baseUrl}
+                  style={{
+                    borderWidth: 1,
+                    fontSize: 18,
+                    margin: 20,
+                    padding: 10
+                  }}
+                  placeholder="baseUrl"
+                />
                 <TextInput
                   onChangeText={setBucket}
                   value={Bucket}
@@ -52,7 +64,8 @@ const InputScreen = props => {
                   onPress={() => {
                     NavigationUtil.navigate(SCREEN_ROUTER_APP.SPLASH, {
                       Bucket,
-                      Name
+                      Name,
+                      baseUrl
                     });
                   }}
                   style={{

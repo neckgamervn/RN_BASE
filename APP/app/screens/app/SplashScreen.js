@@ -21,6 +21,7 @@ class SplashScreen extends Component {
   }
 
   componentDidMount() {
+    console.log(this.props.route.params);
     callAPI({
       API: getImage,
       payload: this.props.route.params,
@@ -37,7 +38,6 @@ class SplashScreen extends Component {
 
   render() {
     const { CustomLabels, isLoading } = this.state;
-    console.log(this.state);
     return (
       <ScreenComponent
         back
