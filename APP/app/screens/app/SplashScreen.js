@@ -15,13 +15,12 @@ class SplashScreen extends Component {
     super(props);
     this.state = {
       isLoading: true,
-      url: "",
+      url: props.route.params.url,
       CustomLabels: []
     };
   }
 
   componentDidMount() {
-    console.log(this.props.route.params);
     callAPI({
       API: getImage,
       payload: this.props.route.params,
@@ -45,56 +44,47 @@ class SplashScreen extends Component {
         isLoading={isLoading}
         renderView={
           <>
-            {CustomLabels.length == 0 && (
-              <Text
-                style={{ alignSelf: "center" }}
-                children="Không tìm thấy lable"
-              />
-            )}
+            <FstImage
+              source={{ uri: this.props.route.params.url }}
+              style={{ width, aspectRatio: 1, position: "absolute" }}
+              resizeMode="stretch"
+            />
             {CustomLabels.map((elem, index) => {
               const { Confidence, Geometry, Name } = elem;
               const { BoundingBox } = Geometry;
               return (
-                <FstImage
+                <View
                   key={index}
-                  source={{ uri: this.state.url }}
-                  style={{ width, aspectRatio: 1 }}
-                  resizeMode="stretch"
+                  style={{
+                    borderWidth: 3,
+                    width: BoundingBox.Width * width,
+                    height: BoundingBox.Height * width,
+                    top: BoundingBox.Top * width,
+                    left: BoundingBox.Left * width,
+                    position: "absolute"
+                  }}
                   children={
-                    <>
-                      <View
+                    <View
+                      style={{
+                        position: "absolute",
+                        top: -BoundingBox.Width * width * 0.7,
+                        width,
+                        zIndex: 2
+                      }}
+                    >
+                      <Text
                         style={{
-                          borderWidth: 3,
-                          width: BoundingBox.Width * width,
-                          height: BoundingBox.Height * width,
-                          top: BoundingBox.Top * width,
-                          left: BoundingBox.Left * width
+                          color: colors.white
                         }}
-                        children={
-                          <View
-                            style={{
-                              position: "absolute",
-                              top: -BoundingBox.Width * width * 0.7
-                            }}
-                          >
-                            <Text
-                              style={{
-                                color: colors.active,
-                                backgroundColor: "white"
-                              }}
-                              children={Confidence}
-                            />
-                            <Text
-                              style={{
-                                color: colors.active,
-                                backgroundColor: "white"
-                              }}
-                              children={Name}
-                            />
-                          </View>
-                        }
+                        children={Confidence}
                       />
-                    </>
+                      <Text
+                        style={{
+                          color: colors.white
+                        }}
+                        children={Name}
+                      />
+                    </View>
                   }
                 />
               );

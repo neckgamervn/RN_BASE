@@ -2,7 +2,9 @@ import ScreenComponent from "@app/components/ScreenComponent";
 import { SCREEN_ROUTER_APP } from "@app/constants/Constant";
 import { colors } from "@app/constants/Theme";
 import NavigationUtil from "@app/navigation/NavigationUtil";
-import React, { useState } from "react";
+import imagePickerHelper from "@app/utils/ImagePickerHelper";
+import ImgToBase64 from "react-native-image-base64";
+import React, { useEffect, useState } from "react";
 import {
   StyleSheet,
   Text,
@@ -12,11 +14,24 @@ import {
 } from "react-native";
 
 const InputScreen = props => {
-  const [Bucket, setBucket] = useState(
-    "custom-labels-console-us-east-1-3086b3404b"
-  );
-  const [Name, setName] = useState("assets/sac/1597916578/image1.jpg");
+  useEffect(() => {
+    pickImage();
+  }, []);
+
+  const pickImage = () => {
+    imagePickerHelper(res => {
+      ImgToBase64.getBase64String(res).then(base64String => {
+        NavigationUtil.navigate(SCREEN_ROUTER_APP.SPLASH, {
+          payload: base64String,
+          baseUrl,
+          url: res
+        });
+      });
+    });
+  };
+
   const [baseUrl, setbaseUrl] = useState("http://localhost:5000");
+
   return (
     <ScreenComponent
       back={false}
@@ -38,42 +53,13 @@ const InputScreen = props => {
                   }}
                   placeholder="baseUrl"
                 />
-                <TextInput
-                  onChangeText={setBucket}
-                  value={Bucket}
-                  style={{
-                    borderWidth: 1,
-                    fontSize: 18,
-                    margin: 20,
-                    padding: 10
-                  }}
-                  placeholder="Bucket"
-                />
-                <TextInput
-                  onChangeText={setName}
-                  value={Name}
-                  style={{
-                    borderWidth: 1,
-                    fontSize: 18,
-                    margin: 20,
-                    padding: 10
-                  }}
-                  placeholder="Name"
-                />
                 <TouchableOpacity
-                  onPress={() => {
-                    NavigationUtil.navigate(SCREEN_ROUTER_APP.SPLASH, {
-                      Bucket,
-                      Name,
-                      baseUrl
-                    });
-                  }}
+                  onPress={pickImage}
                   style={{
                     padding: 10,
                     alignSelf: "center",
                     backgroundColor: colors.active
                   }}
-                  disabled={Bucket.length == 0 || Name.length == 0}
                   children={
                     <Text
                       style={{ fontSize: 18, color: colors.white }}

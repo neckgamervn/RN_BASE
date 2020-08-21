@@ -4,9 +4,7 @@ const createAPI = () => {
   const APIInstant = require("axios").default.create();
   APIInstant.defaults.baseURL = "";
   APIInstant.defaults.timeout = 20000;
-  APIInstant.defaults.headers = { "Content-Type": "application/json" };
   APIInstant.interceptors.request.use(async config => {
-    config.headers.token = await AsyncStorage.getItem("token");
     return config;
   }, Promise.reject);
 
@@ -26,7 +24,7 @@ const handleResult = api =>
 
 module.exports = {
   getUserInfo: () => handleResult(getAPI.get(`api/Service/getUserInfo`)),
-  getImage: ({ Bucket, Name, baseUrl }) =>
-    handleResult(getAPI.get(`${baseUrl}/aws?Bucket=${Bucket}&Name=${Name}`)),
+  getImage: ({ payload, baseUrl }) =>
+    handleResult(getAPI.post(`${baseUrl}/aws`, { payload })),
   getData: () => handleResult(getAPI.get(`api/json/get/cpugQYxUKq?indent=2`))
 };
