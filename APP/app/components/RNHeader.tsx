@@ -10,7 +10,6 @@ import { Header } from "react-native-elements";
 import NavigationUtil from "../navigation/NavigationUtil";
 import * as theme from "../constants/Theme";
 import R from "@app/assets/R";
-import FastImage from "react-native-fast-image";
 
 interface Props {
   color?: string;
@@ -18,15 +17,17 @@ interface Props {
   /**
    * View nút phải
    */
-  rightComponent?: React.ReactNode;
+  rightComponent?: JSX.Element;
   /**
    * View nút trái
    */
-  leftComponent?: React.ReactNode;
+  leftComponent?: JSX.Element;
   /**
    * Title thanh header
    */
   titleHeader: string;
+
+  onBack?: () => void;
 }
 
 interface BackProps {
@@ -41,12 +42,7 @@ export class BackButton extends Component<BackProps> {
         style={[style || styles.leftComp]}
         onPress={NavigationUtil.goBack}
       >
-        <FastImage
-          source={R.images.ic_back}
-          style={{ width: 30, height: 30 }}
-          tintColor={theme.colors.white}
-          resizeMode="contain"
-        />
+        <Text children={"back"} />
       </TouchableOpacity>
     );
   }
@@ -59,38 +55,10 @@ export default class RNHeader extends Component<Props> {
       back,
       titleHeader,
       rightComponent,
-      leftComponent
+      leftComponent,
+      onBack
     } = this.props;
-    return (
-      <Header
-        placement="center"
-        containerStyle={{
-          backgroundColor: theme.colors.headerColor,
-          borderBottomColor: theme.colors.headerColor,
-          height: 90
-        }}
-        leftComponent={back ? <BackButton /> : leftComponent}
-        centerComponent={
-          <Text
-            style={[
-              {
-                fontSize: 18,
-                fontFamily: R.fonts.quicksand_medium
-              },
-              { color: color || "white" }
-            ]}
-          >
-            {titleHeader}
-          </Text>
-        }
-        rightComponent={rightComponent}
-        statusBarProps={{
-          barStyle: "light-content",
-          translucent: true,
-          backgroundColor: "transparent"
-        }}
-      />
-    );
+    return <></>;
   }
 }
 

@@ -14,12 +14,15 @@ const imagePickerHelper = async res => {
     const isWrite = await PermissionsAndroid.check(
       "android.permission.WRITE_EXTERNAL_STORAGE"
     );
-
-    if (isRead && isWrite) startPickImage(res);
+    const isGrantCamera = await PermissionsAndroid.check(
+      "android.permission.CAMERA"
+    );
+    if (isRead && isWrite && isGrantCamera) startPickImage(res);
     else {
       PermissionsAndroid.requestMultiple([
         "android.permission.READ_EXTERNAL_STORAGE",
-        "android.permission.WRITE_EXTERNAL_STORAGE"
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.CAMERA"
       ]).finally(() => {
         imagePickerHelper(res);
       });
@@ -29,13 +32,14 @@ const imagePickerHelper = async res => {
 
 const startPickImage = res => {
   const options = {
-    title: R.strings().select,
-    cancelButtonTitle: R.strings().cancel,
-    chooseFromLibraryButtonTitle: R.strings().from_library,
-    takePhotoButtonTitle: R.strings().take_photo,
+    title: "Chọn",
+    cancelButtonTitle: "Huỷ",
+    chooseFromLibraryButtonTitle: "Từ thư viện",
+    takePhotoButtonTitle: "Chụp ảnh",
     storageOptions: {
-      skipBackup: true,
-      path: "images"
+      skipBackup: false,
+      path: "/",
+      cameraRoll: true
     },
     tintColor: colors.black
   };
@@ -87,7 +91,6 @@ const _resizeImage = async (uri, actualWidth, actualHeight, res) => {
       70,
       0
     );
-    console.log("resize success");
     url = response.uri;
   } catch (error) {
     console.log("resize err: " + error);

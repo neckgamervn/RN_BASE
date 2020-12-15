@@ -1,23 +1,15 @@
 module.exports = {
   SCREEN_ROUTER: {
-    MAIN: "MAIN",
-    AUTH: "AUTH",
-    SPLASH: "SPLASH"
+    MAIN: "Main",
+    AUTH: "Auth"
   },
-  SCREEN_ROUTER_AUTH: {
-    LOGIN: "LOGIN",
-    FORGOT_PASS: "FORGOT_PASS",
-    REGISTER: "REGISTER"
-  },
+  SCREEN_ROUTER_AUTH: {},
   SCREEN_ROUTER_APP: {
-    SPLASH: "SPLASH",
-    INPUT: "INPUT"
+    HOME: "Home",
+    USER: "User"
   },
+  AUTH_LOADING: "AuthLoading",
   API_STATUS: {
     RE_LOGIN: 403
-  },
-  STRINGEE_CODE: {
-    TEST_TOKEN:
-      "eyJjdHkiOiJzdHJpbmdlZS1hcGk7dj0xIiwidHlwIjoiSldUIiwiYWxnIjoiSFMyNTYifQ.eyJqdGkiOiJTS2FVTWNIR2x5N2MwTUpGTHVla1hvTDdrY3RhV3NPckl1LTE1OTUzODc0MDUiLCJpc3MiOiJTS2FVTWNIR2x5N2MwTUpGTHVla1hvTDdrY3RhV3NPckl1IiwiZXhwIjoxNTk3OTc5NDA1LCJ1c2VySWQiOiJ0aHVhbmh2In0.KLHA2BhpWrhVhyH57xyfZX4JBKBfDS3SSdwmXpWJm8U"
   }
 };

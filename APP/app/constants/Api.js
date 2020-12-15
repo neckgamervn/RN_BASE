@@ -1,14 +1,20 @@
-const AsyncStorage = require("@react-native-community/async-storage").default;
+const { API_STATUS } = require("@constant");
+const R = require("@app/assets/R").default;
+const { AsyncStorage } = require("react-native");
+const { showMessages } = require("@app/utils/AlertHelper");
 
 const createAPI = () => {
   const APIInstant = require("axios").default.create();
-  APIInstant.defaults.baseURL = "";
+  APIInstant.defaults.baseURL = "http://3.1.13.10:5901/";
   APIInstant.defaults.timeout = 20000;
+  APIInstant.defaults.headers = { "Content-Type": "application/json" };
   APIInstant.interceptors.request.use(async config => {
     return config;
   }, Promise.reject);
 
   APIInstant.interceptors.response.use(response => {
+    if (response.data && response.data.status !== 1)
+      showMessages(R.strings().notification, data.message);
     return response;
   });
   return APIInstant;
@@ -23,8 +29,5 @@ const handleResult = api =>
   });
 
 module.exports = {
-  getUserInfo: () => handleResult(getAPI.get(`api/Service/getUserInfo`)),
-  getImage: ({ payload, baseUrl }) =>
-    handleResult(getAPI.post(`${baseUrl}/aws`, { payload })),
-  getData: () => handleResult(getAPI.get(`api/json/get/cpugQYxUKq?indent=2`))
+  objectPredict: body => handleResult(getAPI.post(`object_predict`, body))
 };

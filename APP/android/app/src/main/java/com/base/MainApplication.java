@@ -2,16 +2,15 @@ package com.base;
 
 import android.app.Application;
 import android.content.Context;
+
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactApplication;
-import com.microsoft.codepush.react.CodePush;
-import com.facebook.reactnative.androidsdk.FBSDKPackage;
-import com.microsoft.codepush.react.CodePush;
-import com.geektime.rnonesignalandroid.ReactNativeOneSignalPackage;
-import com.AlexanderZaytsev.RNI18n.RNI18nPackage;
+import fr.bamlab.rnimageresizer.ImageResizerPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.soloader.SoLoader;
+import com.microsoft.codepush.react.CodePush;
+
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
